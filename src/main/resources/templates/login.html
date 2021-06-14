@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{webjars/bootstrap/5.0.1/css/bootstrap.min.css}"/>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Formulario HTML Básico 1</h2>
+   <form method="POST" action="/login/basicForm">
+        Id:<input type="text" name="id"/>
+        Nombre:<input type="text" name="name"/>
+        Contraseña:<input type="password" name="password"/>
+        Email<input type="text" name="email"/>
+        <input type="submit" value="Enviar">
+  </form>
+  
+  
+  
+<div class="container-fluid " style="background-color: #e3f2fd;">
+  <div class="container p-3 my-3 border bg-light " >
+  	 <h3 class="text-center text-primary" >Registo de Aspirantes</h3>
+  	 <br/><br/>
+     <div id="rest" >
+         <div th:if="${usuario != null}">[[${usuario}]] </div>
+     </div>
+     <form method="POST" action="/registro/registrar" id="formRegistrar">
+
+     <div class="row" >
+       	<div class="col">
+      		<input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre">
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Apellido Paterno" name="apellidoPaterno">
+    	</div>
+  	</div>
+  	<br/>
+  	<div class="row">
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Apellido Materno" name="apellidoMaterno">
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Edad" name="edad">
+    	</div>
+  	</div>
+  	<br/>
+  	<div class="row">
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Telefono" name="telefono">
+      	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Direccion" name="direccion">
+    	</div>
+  	</div>
+  	<br/>
+  	<div class="row">
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Correo" name="correo">
+    	</div>
+    	<div class="col">
+      		<div class="custom-control custom-radio custom-control-inline" name="sexo">
+		  		<input type="radio" id="h" value="h" name="customRadioInline1" class="custom-control-input">
+		  		<label class="custom-control-label" for="customRadioInline1">Hombre</label>
+			</div>
+			<div class="custom-control custom-radio custom-control-inline">
+		  		<input type="radio" id="m" value="m" name="customRadioInline1" class="custom-control-input">
+		  		<label class="custom-control-label" for="customRadioInline2">Mujer</label>
+			</div>
+			<div class="custom-control custom-radio custom-control-inline">
+		  		<input type="radio" id="na" value="na" name="customRadioInline1" class="custom-control-input">
+		  		<label class="custom-control-label" for="customRadioInline2">Prefiero no decirlo</label>
+      		</div>
+    	</div>
+  	</div>
+  	<br/>
+   		<button type="submit" class="btn btn-primary">Enviar</button>
+   	</form>
+   </div>
+</div>   
+
+   
+</body>
+</html>

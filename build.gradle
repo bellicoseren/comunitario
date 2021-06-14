@@ -1,0 +1,59 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.5'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'mx.edu.uacm'
+version = '1.0'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'org.postgresql:postgresql'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	
+	// https://mvnrepository.com/artifact/org.webjars/jquery-validation
+implementation group: 'org.webjars', name: 'jquery-validation', version: '1.19.3'
+	
+	
+	// https://mvnrepository.com/artifact/org.webjars/jquery
+implementation group: 'org.webjars', name: 'jquery', version: '3.6.0'
+	
+	
+		implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	
+		// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.15'
+//'mysql:mysql-connector-java:8.0.15'
+
+compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+	
+	testCompileOnly 'org.projectlombok:lombok:1.18.20'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+	
+	
+// https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+
+// https://mvnrepository.com/artifact/org.webjars/bootstrap
+implementation group: 'org.webjars', name: 'bootstrap', version: '5.0.1'
+
+// https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+compile('org.hibernate:hibernate-core:5.3.1.Final')
+
+// https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
+
+}
+
+test {
+	useJUnitPlatform()
+}
